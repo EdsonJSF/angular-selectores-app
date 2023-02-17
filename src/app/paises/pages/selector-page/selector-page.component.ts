@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
+import { PaisesService } from '../../services/paises.service';
+
 @Component({
   selector: 'app-selector-page',
   templateUrl: './selector-page.component.html',
@@ -11,9 +13,14 @@ export class SelectorPageComponent implements OnInit {
     region: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  // Llenar selectores
+  regiones: string[] = [];
 
-  ngOnInit(): void {}
+  constructor(private fb: FormBuilder, private paisesServ: PaisesService) {}
+
+  ngOnInit(): void {
+    this.regiones = this.paisesServ.regiones;
+  }
 
   guardar() {
     console.log(this.miFormulario.value);
