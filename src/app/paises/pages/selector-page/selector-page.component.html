@@ -22,7 +22,7 @@
       <select class="form-control" formControlName="pais">
         <option value="" selected disabled>-- Seleccione Pais --</option>
         <option *ngFor="let pais of paises" [value]="pais.cca3">
-          {{ pais.name.common }}
+          {{ pais.name.nativeName.spa?.common || pais.name.common }}
         </option>
       </select>
     </div>
