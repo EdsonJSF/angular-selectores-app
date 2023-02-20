@@ -1,4 +1,4 @@
-export interface Pais {
+export interface PaisSmall {
   name: Name;
   cca3: string;
   altSpellings: string[];
