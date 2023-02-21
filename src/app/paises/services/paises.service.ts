@@ -29,8 +29,8 @@ export class PaisesService {
     );
   }
 
-  getPaisesPorCCA3(cca3: string): Observable<Pais | null> {
+  getPaisesPorCCA3(cca3: string): Observable<Pais[] | null> {
     if (!cca3) return of(null);
-    return this.http.get<Pais>(`${this._baseURL}/alpha/${cca3}`);
+    return this.http.get<Pais[]>(`${this._baseURL}/alpha/${cca3}`);
   }
 }
