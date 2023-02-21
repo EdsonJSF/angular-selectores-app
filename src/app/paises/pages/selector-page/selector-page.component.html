@@ -16,7 +16,7 @@
   </div>
 
   <!-- Paises -->
-  <div class="row mb-3">
+  <div class="row mb-3" *ngIf="paises.length">
     <div class="col">
       <label class="form-label">Pais</label>
       <select class="form-control" formControlName="pais">
@@ -29,7 +29,7 @@
   </div>
 
   <!-- Fronteras -->
-  <div class="row mb-3">
+  <div class="row mb-3" *ngIf="fronteras.length">
     <div class="col">
       <label class="form-label">Fronteras</label>
       <select class="form-control" formControlName="frontera">
@@ -54,3 +54,12 @@
 <h3>Formulario</h3>
 <pre>{{ miFormulario.valid }}</pre>
 <pre>{{ miFormulario.value | json }}</pre>
+
+<div
+  class="position-fixed top-0 start-0 min-vh-100 min-vw-100 d-flex justify-content-center align-items-center"
+  *ngIf="cargando"
+>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
